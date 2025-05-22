@@ -1,7 +1,7 @@
 import React from 'react'
 import Style from "@/style/main.module.css"
   
-function Shdows({color1="red", color2 ="blue" }) {
+function Shdows({color1="red", color2 ="blue" ,intencity=100}) {
 
     const COLORS = 
     {
@@ -18,12 +18,15 @@ function Shdows({color1="red", color2 ="blue" }) {
         lime : "bg-lime-500",
         indigo : "bg-indigo-500",
         emerald : "bg-emerald-500",
+        rose : "bg-rose-500",
+        slate : "bg-slate-500",
+        sky : "bg-sky-500",
     }  
 
   return (
  <>
-    <div className ={`${COLORS[color1]}    h-1/3 w-full ${Style.shdowmaker}`}></div>
-    <div className ={`${COLORS[color2]}   h-1/3  w-full ${Style.shdowmaker}`}></div>
+    <div className ={`${COLORS[color1]}    h-1/3 w-full`} style={{filter:`blur(${intencity}px)`}}></div>
+    <div className ={`${COLORS[color2]}   h-1/3  w-full`} style={{filter:`blur(${intencity}px)`}}></div>
  </>
   )
 }
