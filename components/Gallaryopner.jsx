@@ -22,16 +22,16 @@ function Gallaryopner({ setOpenerGallary }) {
       <div className='float-right cursor-pointer text-3xl bg-rose-400' onClick={() => handleClick()}><i className="ri-close-fill"></i></div>
 
 
-      <div className="flex flex-wrap gap-4  h-screen w-screen ">
+      <div className="  h-full w-full  overflow-y-scroll scrollbar-hide gap-4 ">
         {information.map((block, index) =>
           block.photo.map((item, i) => (
-            <div key={`${index}-${i}`} className="w-50 h-30 rounded overflow-hidden shadow-lg ">
+            <div key={`${index}-${i}`} className={`${Style.glass}w-50 h-30 inline-block rounded m-2 shadow-gray-600 shadow-lg cursor-pointer`}>
               <img
                 src={item.url.src}
                 alt={item.description}
-                className="w-full h-full object-cover rounded shadow "
+                className="w-full h-full object-cover rounded overflow-hidden  "
               />
-              <p className="text-white text-sm mt-2">{item.description}</p>
+              
             </div>
           ))
         )}
